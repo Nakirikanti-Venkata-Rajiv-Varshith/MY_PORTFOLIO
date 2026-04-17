@@ -11,8 +11,8 @@ function Projects() {
     <section id="projects" className="projects-section">
       <div className="section-inner" ref={ref}>
         <div className="reveal">
-          <span style={{fontSize:'1.3rem'}} className="section-label">What I've Built</span>
-          <h2>Featured Projects</h2>
+          <span style={{fontSize:'2rem'}} className="section-label">What I've Built</span>
+          {/* <h2 style={{fontSize:'3.5rem'}}>Featured Projects</h2> */}
           <div className="section-divider" />
         </div>
 

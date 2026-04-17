@@ -12,8 +12,9 @@ function ProjectCard({ title, description, image, github, demo }) {
       </div>
 
       <div className="project-body">
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <h3 style={{ fontWeight: 'bolder', fontSize: '2rem' }}>{title}</h3>
+        <div className="project-description">{description}</div>
+        
 
         <div style={{ display: "flex", gap: "10px", marginTop: "10px", }}>
 
@@ -23,7 +24,7 @@ function ProjectCard({ title, description, image, github, demo }) {
               href={demo}
               target="_blank"
               rel="noreferrer"
-              style={{ display: "flex", alignItems: "center", padding: "3px", border:'1px solid #00C8E0',}}
+              style={{ display: "flex", alignItems: "center", padding: "3px", border: '1px solid #00C8E0', }}
             >
               <ExternalLink size={15} /> Live Demo <ArrowUpRight size={14} />
             </a>
@@ -35,7 +36,7 @@ function ProjectCard({ title, description, image, github, demo }) {
               href={github}
               target="_blank"
               rel="noreferrer"
-              style={{ display: "flex", alignItems: "center", padding: "3px", border:'1px solid white' }}
+              style={{ display: "flex", alignItems: "center", padding: "3px", border: '1px solid white' }}
             >
               <Github size={15} /> View on GitHub <ArrowUpRight size={14} />
             </a>
