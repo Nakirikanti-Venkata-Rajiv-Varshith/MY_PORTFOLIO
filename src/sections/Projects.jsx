@@ -12,7 +12,7 @@ function Projects() {
       <div className="section-inner" ref={ref}>
         <div className="reveal">
           <span style={{fontSize:'2rem'}} className="section-label">What I've Built</span>
-          {/* <h2 style={{fontSize:'3.5rem'}}>Featured Projects</h2> */}
+          <h2 style={{fontSize:'3rem'}}>Featured Projects</h2>
           <div className="section-divider" />
         </div>
 

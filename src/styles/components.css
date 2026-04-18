@@ -423,10 +423,20 @@
   line-height: 1.5;
   font-size: 1.35rem;
   max-height: 20rem;
-  overflow-y: auto;
-  scrollbar-width: thin; 
-  scrollbar-color: rgba(255, 255, 255, 0.406) transparent;
+  /* overflow-y: auto; */
+  /* scrollbar-width: thin; 
+  scrollbar-color: rgba(255, 255, 255, 0.406) transparent; */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;   /* show 3 lines initially */
+  -webkit-box-orient: vertical;
 }
+
+.project-description.expanded {
+  -webkit-line-clamp: unset;
+  max-height: none;
+}
+
 .project-description::-webkit-scrollbar {
   width: 6px;
 }

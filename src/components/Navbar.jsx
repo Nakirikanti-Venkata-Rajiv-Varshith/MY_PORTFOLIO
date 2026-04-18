@@ -29,27 +29,30 @@ function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Active section tracking
-  useEffect(() => {
-    const sections = NAV_LINKS
-      .filter(l => l.href !== '#')
-      .map(l => document.querySelector(l.href))
-      .filter(Boolean);
+// Active section tracking
+useEffect(() => {
+  const sections = NAV_LINKS
+    .filter(l => l.href !== '#')
+    .map(l => document.querySelector(l.href))
+    .filter(Boolean);
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting && e.target.id) {
-            setActive('#' + e.target.id);
-          }
-        });
-      },
-      { threshold: 0.35 }
-    );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive('#' + entry.target.id);
+        }
+      });
+    },
+    {
+      rootMargin: '-40% 0px -55% 0px',
+      threshold: 0 
+    }
+  );
 
-    sections.forEach(s => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
+  sections.forEach((s) => observer.observe(s));
+  return () => observer.disconnect();
+}, []);
 
   const closeMenu = () => setOpen(false);
 
