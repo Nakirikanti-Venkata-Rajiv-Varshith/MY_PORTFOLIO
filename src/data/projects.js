@@ -3,49 +3,48 @@ export const projects = [
 title: "PRISM - Predictive Resource Intelligence & Scaling",
 description: `
 🧠 Overview:
-Real-time, resource-aware monitoring and self-healing system that detects anomalies and autonomously triggers recovery actions like restart and scaling under constrained environments.
+Designed and built a real-time, resource-aware monitoring and self-healing system that detects anomalies and autonomously triggers recovery actions (restart, scaling) under constrained environments. Focused on performance, low memory usage, and system reliability.
 
 🛠️ Tech Stack:
-- Frontend: React, Socket.io
-- Backend: Node.js, Express
-- ML Service: Python, Flask
+- Frontend: React, Socket.io (real-time visualization)
+- Backend: Node.js, Express (metrics collection + orchestration)
+- ML Service: Python, Flask (lightweight anomaly detection)
 - DevOps & Infra: Docker, Docker Compose, NVIDIA Container Runtime
-- Process Management: PM2
-- Scripting: Bash (scale up / down, restart automation)
+- Process Management: PM2 (service lifecycle management)
+- Scripting: Bash (automated scaling and recovery workflows)
 
 ⚙️ System Flow:
 - Collects CPU, RAM, disk, and GPU (when available) metrics via Node.js backend
-- Streams real-time updates to frontend using WebSockets (Socket.io + React)
-- Sends metrics to Python (Flask) service for anomaly detection
-- Executes automated recovery actions (restart / scale) based on system state
+- Streams real-time system metrics to frontend using WebSockets (Socket.io)
+- Routes telemetry data to a Python (Flask) microservice for anomaly detection
+- Triggers automated recovery actions (restart / scale) based on system state and anomaly signals
 
 🧠 Anomaly Detection:
-- Custom lightweight model based on trend + spike analysis
-- Removed heavy ML libraries (sklearn) to reduce memory overhead
-- Designed for fast inference under low-resource environments
+- Developed a custom lightweight anomaly detection model using trend + spike analysis
+- Eliminated heavy ML dependencies (e.g., sklearn) to significantly reduce memory overhead
+- Optimized for fast inference and stability in low-resource environments
 
 ⚙️ Self-Healing Engine:
-- Auto-restarts services using PM2 process manager
-- Implements scale-up / scale-down using custom shell scripts
-- Cooldown + logging mechanisms to prevent repeated triggers
-- Stores predictions and actions for tracking system behavior
+- Implemented automated service recovery using PM2 process manager
+- Designed custom scale-up / scale-down mechanisms using shell scripts
+- Added cooldown and logging systems to prevent redundant or unstable triggers
+- Persisted predictions and recovery actions for system behavior tracking and debugging
 
 🧩 Infrastructure & Deployment:
-- Fully Dockerized microservices (frontend, backend, ML service)
-- Enforced strict memory limits:
+- Architected fully Dockerized microservices (frontend, backend, ML service)
+- Enforced strict memory constraints:
   - Frontend: 256MB
   - Backend / ML: 512MB
-- Internal container networking for service-to-service communication
-- GPU-enabled containers using NVIDIA runtime for hardware-level access
+- Enabled internal container networking for reliable service-to-service communication
+- Integrated NVIDIA Container Runtime for GPU-enabled workloads with hardware-level access
 
 🔥 Key Challenges Solved:
-- Enabled GPU access inside Docker using NVIDIA runtime + base images
-- Fixed container isolation issues preventing host hardware access
-- Handled Linux compatibility issues (missing nvidia-smi)
-- Replaced heavy ML pipeline with optimized lightweight logic
-- Ensured stable communication between services via internal Docker network
-- Built fallback mechanisms and documented setup for non-GPU systems
-
+- Solved GPU access limitations inside Docker by integrating NVIDIA Container Runtime, enabling hardware-level acceleration for ML workloads
+- Resolved container isolation constraints that blocked host hardware access, ensuring stable interaction between system resources and containers
+- Fixed Linux compatibility issues (e.g., missing nvidia-smi) to ensure consistent GPU visibility across environments
+- Reduced memory usage and improved inference speed by replacing a heavy ML pipeline with a custom lightweight anomaly detection model
+- Ensured reliable inter-service communication through optimized internal Docker networking
+- Built fallback mechanisms and documented setup workflows to support both GPU and non-GPU systems
 `,
 image: "images/project4.png",
 github: "https://github.com/Nakirikanti-Venkata-Rajiv-Varshith/Predictive_Resource_Intelligence_Scaling_Manager_PRISM"
